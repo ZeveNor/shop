@@ -13,7 +13,6 @@ const imageUrls = [
   "https://placehold.co/408",
   "https://placehold.co/409",
   "https://placehold.co/410",
-  // Add more URLs as needed
 ];
 
 export default function Component() {

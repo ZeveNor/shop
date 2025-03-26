@@ -7,16 +7,18 @@ const ThemeSwitcher = dynamic(() => import("@/components/theme-switcher").then(m
 });
 
 import {
+  IconArchive2,
   IconBrandApple,
   IconCommandRegular,
   IconDashboard,
   IconHeadphones,
+  IconLogin,
   IconLogout,
   IconSearch,
   IconSettings,
   IconShield,
 } from "justd-icons"
-import { Avatar, Button, Menu, Navbar, Separator } from "ui"
+import { Avatar, Button, Menu, Navbar, Separator, Badge } from "ui"
 
 export default function AppNavbar({ children, ...props }: React.ComponentProps<typeof Navbar>) {
   return (
@@ -31,17 +33,23 @@ export default function AppNavbar({ children, ...props }: React.ComponentProps<t
           </Navbar.Logo>
           <Navbar.Section>
             <Navbar.Item isCurrent href="#">
-              Store
+              Shop
             </Navbar.Item>
-            <Navbar.Item href="#">Link1</Navbar.Item>
-            <Navbar.Item href="#">Link2</Navbar.Item>
+            <Navbar.Item href="#">
+              Inventory
+            </Navbar.Item>
+            <Navbar.Item isDisabled href="#">Markets<Badge>อยู่ในช่วงพัฒนา</Badge></Navbar.Item>
+            <Navbar.Item isDisabled href="#">Quick Trade<Badge>อยู่ในช่วงพัฒนา</Badge></Navbar.Item>
           </Navbar.Section>
           <Navbar.Section className="ml-auto hidden sm:flex">
             <Navbar.Flex>
-              <Button appearance="plain" size="square-petite" aria-label="Search for products">
-                <IconSearch />
-              </Button>
               <ThemeSwitcher appearance="plain" />
+            </Navbar.Flex>
+            <Separator orientation="vertical" className="mr-3 ml-1 h-6" />
+            <Navbar.Flex>
+              <Button appearance="outline" size="small">
+                Sign In <IconLogin />
+              </Button>
             </Navbar.Flex>
             <Separator orientation="vertical" className="mr-3 ml-1 h-6" />
             <Menu>
@@ -51,8 +59,8 @@ export default function AppNavbar({ children, ...props }: React.ComponentProps<t
               <Menu.Content placement="bottom right" className="sm:min-w-56">
                 <Menu.Section>
                   <Menu.Header separator>
-                    <span className="block">Kurt Cobain</span>
-                    <span className="font-normal text-muted-fg">@cobain</span>
+                    <span className="block">Fluent member</span>
+                    <span className="font-normal text-muted-fg">@role</span>
                   </Menu.Header>
                 </Menu.Section>
 
@@ -63,11 +71,6 @@ export default function AppNavbar({ children, ...props }: React.ComponentProps<t
                 <Menu.Item href="#settings">
                   <IconSettings />
                   Settings
-                </Menu.Item>
-                <Menu.Separator />
-                <Menu.Item>
-                  <IconCommandRegular />
-                  Command Menu
                 </Menu.Item>
                 <Menu.Separator />
                 <Menu.Item href="#contact-s">
@@ -120,10 +123,11 @@ function UserMenu() {
         <Avatar alt="cobain" size="small" shape="square" src="/images/avatar/cobain.jpg" />
       </Menu.Trigger>
       <Menu.Content placement="bottom right" className="sm:min-w-56">
+        
         <Menu.Section>
           <Menu.Header separator>
-            <span className="block">Kurt Cobain</span>
-            <span className="font-normal text-muted-fg">@cobain</span>
+            <span className="block">Fluent member</span>
+            <span className="font-normal text-muted-fg">@role</span>
           </Menu.Header>
         </Menu.Section>
 
@@ -135,19 +139,9 @@ function UserMenu() {
           <IconSettings />
           Settings
         </Menu.Item>
-        <Menu.Item href="#security">
-          <IconShield />
-          Security
-        </Menu.Item>
-        <Menu.Separator />
-        <Menu.Item>
-          <IconCommandRegular />
-          Command Menu
-        </Menu.Item>
-
         <Menu.Item href="#contact">
           <IconHeadphones />
-          Customer Support
+          Contact Support
         </Menu.Item>
         <Menu.Separator />
         <Menu.Item href="#logout">
