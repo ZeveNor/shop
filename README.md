@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-[![image](https://github.com/ZeveNor/flappy-bird/blob/main/image/image.png?raw=true)](https://github.com/ZeveNor/flappy-bird/blob/main/image/image.png?raw=true)
+[![image](https://github.com/ZeveNor/shop/blob/main/img/image.png?raw=true)](https://github.com/ZeveNor/shop/blob/main/img/image.png?raw=true)
 
 ## Getting Started
 
